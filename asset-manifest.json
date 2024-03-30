@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/dota2-deploy1/static/css/main.c5c6c22b.css",
+    "main.js": "/dota2-deploy1/static/js/main.b87a3288.js",
+    "static/js/453.56f46472.chunk.js": "/dota2-deploy1/static/js/453.56f46472.chunk.js",
+    "static/media/dota-2-bg-2.webp": "/dota2-deploy1/static/media/dota-2-bg-2.84546fd143077655ad96.webp",
+    "index.html": "/dota2-deploy1/index.html",
+    "main.c5c6c22b.css.map": "/dota2-deploy1/static/css/main.c5c6c22b.css.map",
+    "main.b87a3288.js.map": "/dota2-deploy1/static/js/main.b87a3288.js.map",
+    "453.56f46472.chunk.js.map": "/dota2-deploy1/static/js/453.56f46472.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5c6c22b.css",
+    "static/js/main.b87a3288.js"
+  ]
+}
