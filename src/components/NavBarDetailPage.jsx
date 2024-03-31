@@ -1,4 +1,4 @@
-import React from "react";
+import { redirect, redirectDocument } from "react-router-dom";
 
 const NavBarDetailPage = ({ id }) => {
   let previousButtonDisplay = "";
