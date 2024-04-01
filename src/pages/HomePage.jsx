@@ -78,6 +78,7 @@ const HomePage = () => {
       <h1 className="text-6xl text-red-500 m-[20px] text-center">
         List of Heroes
       </h1>
+
       <div className="grid gap-5  md:grid-cols-2  xl:grid-cols-4  ">
         <div className="text-white w-[250px] flex bg-red-900 rounded-lg text-center">
           <span className="m-[auto] p-[auto]">Filter Heros </span>

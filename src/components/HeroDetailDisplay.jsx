@@ -4,6 +4,7 @@ import {
   imageAttGenFunction,
 } from "../services/operateFucntion";
 import SkillsTab from "./SkillsTab";
+import LoadingVideo from "./LoadingVideo";
 
 const HeroDetailDisplay = ({ heroData }) => {
   const primaryStatColor = ["red", "lime", "aqua", "orange"];
@@ -12,7 +13,7 @@ const HeroDetailDisplay = ({ heroData }) => {
     <div className="text-white max-w[1200px] grid sm:grid-cols-1 xl:grid-cols-2">
       <div className="heroImg min-w-[250px] w-[100%]">
         <div className="flex justify-center items-center w-[100%] ">
-          <LoadingImage imageUrl={heroData.thumb_image} h={"100vh"} />
+          <LoadingVideo url={heroData.thumb_video} />
         </div>
       </div>
       <div className=" m-auto sm:text-m s:w-full md:text-xl xl:text-2xl w-[80%]">
