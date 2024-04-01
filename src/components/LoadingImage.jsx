@@ -19,7 +19,7 @@ function LoadingImage({ imageUrl, h }) {
         </div>
       )}
       <img
-        className="w-[100%] "
+        className="w-[150px] h-[150px] "
         src={imageUrl}
         alt=""
         onLoad={() => loadingHandler()}

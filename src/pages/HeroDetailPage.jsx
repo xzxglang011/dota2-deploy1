@@ -4,6 +4,7 @@ import ReactLoading from "react-loading";
 import fetchHeroData from "../services/fetchHeroData";
 import NavBarDetailPage from "../components/NavBarDetailPage";
 import HeroDetailDisplay from "../components/HeroDetailDisplay";
+import HeroRoleDisplay from "../components/HeroRoleDisplay";
 
 const HeroDetailPage = () => {
   const { id } = useParams();

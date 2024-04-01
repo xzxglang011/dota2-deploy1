@@ -11,7 +11,7 @@ function LoadingVideo({ url }) {
   return (
     <div className="h-[100%] relative">
       {loading && (
-        <div className="flex justify-center items-center w-[100%] h-[100vh]">
+        <div className="flex justify-center items-center w-[90%] h-[80vh]">
           <ReactLoading type="spin" color="green" />
         </div>
       )}

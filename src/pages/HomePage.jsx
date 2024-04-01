@@ -75,7 +75,7 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-col w-[100%] justify-center items-center ">
-      <h1 className="text-6xl text-red-500 m-[20px] text-center">
+      <h1 className="text-6xl text-red-500 m-[20px] text-center shining-text">
         List of Heroes
       </h1>
 
@@ -89,9 +89,9 @@ const HomePage = () => {
           onChange={option1Handler}
         >
           <option value="default">All stat</option>
-          <option value="0">Str</option>
-          <option value="1">Agi</option>
-          <option value="2">Int</option>
+          <option value="0">Strength</option>
+          <option value="1">Agility</option>
+          <option value="2">Intelligent</option>
           <option value="3">Universal</option>
         </select>
         <select
