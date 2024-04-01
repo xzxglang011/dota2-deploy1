@@ -12,11 +12,59 @@ const NavBarDetailPage = ({ id }) => {
   }
 
   const goToNextPageHandler = () => {
-    const nextId = parseInt(id) + 1;
+    let navigatePlusID;
+    switch (id) {
+      case 23:
+        navigatePlusID = 24;
+        break;
+      case 114:
+        navigatePlusID = 118;
+        break;
+      case 121:
+        navigatePlusID = 122;
+        break;
+      case 123:
+        navigatePlusID = 125;
+        break;
+      case 126:
+        navigatePlusID = 127;
+        break;
+      case 129:
+        navigatePlusID = 134;
+        break;
+      default:
+        navigatePlusID = id;
+        break;
+    }
+    const nextId = parseInt(navigatePlusID) + 1;
     window.location.href = `/detail/${nextId}`;
   };
   const goToPrevPageHandler = () => {
-    const prevId = parseInt(id) - 1;
+    let navigateMinusID;
+    switch (id) {
+      case 25:
+        navigateMinusID = 24;
+        break;
+      case 119:
+        navigateMinusID = 115;
+        break;
+      case 123:
+        navigateMinusID = 122;
+        break;
+      case 126:
+        navigateMinusID = 124;
+        break;
+      case 128:
+        navigateMinusID = 127;
+        break;
+      case 135:
+        navigateMinusID = 130;
+        break;
+      default:
+        navigateMinusID = id;
+        break;
+    }
+    const prevId = parseInt(navigateMinusID) - 1;
     window.location.href = `/detail/${prevId}`;
   };
   const goToHomePageHandler = () => {

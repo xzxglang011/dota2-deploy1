@@ -18,6 +18,7 @@ const HomePage = () => {
     const fetchData = async () => {
       try {
         const data = await fetchHeroList(); // Fetch heroes data
+
         setHerosList(data); // Set the fetched data in state
         setFetchData(data); //Store back up fetch data
         setLoading(false); // Set loading state to false after data is fetched
