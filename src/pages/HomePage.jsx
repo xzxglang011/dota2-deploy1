@@ -124,12 +124,15 @@ const HomePage = () => {
   return (
     <div className="flex flex-col w-[100%] justify-center items-center ">
       <h1 className="text-6xl text-red-500 m-[20px] text-center animate-charcter">
-        List of Heroes
+        List of DOTA2 Heroes
       </h1>
 
       <div className="grid gap-5  md:grid-cols-2  xl:grid-cols-4  ">
-        <div className="text-white w-[250px] flex bg-red-900 rounded-lg text-center hover:scale-110 hover:bg-lime-500 hover:text-black">
-          <button className="m-[auto] p-[auto] w-full " onClick={clickHandler}>
+        <div className="text-white w-[250px] h-[50px] flex bg-red-900 rounded-lg text-center hover:scale-110 hover:bg-lime-500 hover:text-black">
+          <button
+            className="m-[auto] p-[auto] w-full h-full"
+            onClick={clickHandler}
+          >
             Clear Filter Button{" "}
           </button>
         </div>
@@ -170,7 +173,7 @@ const HomePage = () => {
         </div>
       ) : (
         <div className="mt-[20px] max-w-[1100px]">
-          <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  ">
+          <ul className="grid  gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  ">
             {herosList.map((hero) => (
               <HeroCard hero={hero} key={hero.name_loc} />
             ))}

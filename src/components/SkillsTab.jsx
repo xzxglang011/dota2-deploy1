@@ -26,12 +26,12 @@ function SkillsTab({ abilities, heroData }) {
             className="w-full"
           >
             <div className="text-sm text-gray-500 dark:text-gray-400 bg-slate-400 w-[100%]  sm:h-[150px] opacity-90  rounded-xl sm:overflow-auto box-border scroll-smooth">
-              <div className="sm:flex">
-                <div className="ability-Img sm:w-[150px] sm:h-[150px] w-[150px] box-border ">
+              <div className="sm:flex w-full h-full">
+                <div className="">
                   <LoadingImage imageUrl={ability.thumb_image} />
                 </div>
                 <h1
-                  className="w-full break-words inline-block text-black p-[10px] m-auto font-sans sm:text-lg/[20px] "
+                  className="break-words  text-black flex p-[10px] sm:w-[80%] sm:text-xl"
                   dangerouslySetInnerHTML={{ __html: ability.desc_loc }}
                 ></h1>
               </div>

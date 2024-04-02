@@ -9,7 +9,7 @@ function LoadingVideo({ url }) {
   };
 
   return (
-    <div className="h-[100%] relative">
+    <div className="xl:h-[90%] xl:relative h-[75vh]">
       {loading && (
         <div className="flex justify-center items-center w-[90%] h-[80vh]">
           <ReactLoading type="spin" color="green" />
@@ -19,7 +19,7 @@ function LoadingVideo({ url }) {
         autoPlay
         muted
         loop
-        className="h-[100%]"
+        className="xl:h-full h-[90%]"
         onLoadedData={handleVideoLoad}
       >
         <source src={url} type="video/webm" />

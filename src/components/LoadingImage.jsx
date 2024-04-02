@@ -18,13 +18,15 @@ function LoadingImage({ imageUrl, h }) {
           <ReactLoading type="spin" color="green" />
         </div>
       )}
-      <img
-        className="w-[150px] h-[150px] "
-        src={imageUrl}
-        alt=""
-        onLoad={() => loadingHandler()}
-        style={{ display: loading ? "none" : "block" }}
-      />
+      <div className="flex w-full items-center justify-center sm:w-full sm:block sm:h-full">
+        <img
+          src={imageUrl}
+          alt=""
+          onLoad={() => loadingHandler()}
+          style={{ display: loading ? "none" : "block" }}
+          className="w-[75px] h-[75px] sm:w-[150px] sm:h-[150px]"
+        />
+      </div>
     </div>
   );
 }

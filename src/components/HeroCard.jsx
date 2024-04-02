@@ -11,7 +11,7 @@ function HeroCard({ hero }) {
   return (
     <li key={`${hero.id}${hero.name_loc}`}>
       <Link to={`/detail/${hero.id}`}>
-        <div className="max-w-[200px] bg-transparent border border-gray-200 rounded-lg   hover:scale-110 hover:text-lime-300 text-white hover:border-lime-500">
+        <div className="max-w-[200px]   bg-transparent border border-gray-200 rounded-lg   hover:scale-110 hover:text-lime-300 text-white hover:border-lime-500">
           <div className="img">
             <img className="rounded-t-lg w-full" src={hero.image} alt="" />
           </div>
