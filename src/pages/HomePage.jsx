@@ -71,6 +71,13 @@ const HomePage = () => {
   const option2Handler = (event) => {
     setSelectedOption2(event.target.value);
   };
+
+  //Clear filter
+  const clickHandler = () => {
+    setSelectedOption1("default");
+    setSelectedOption2("default");
+    setInputName("");
+  };
   //Filter data
   function filterData(option1, option2, input, fetchData) {
     let filteredData = fetchData;
@@ -121,8 +128,10 @@ const HomePage = () => {
       </h1>
 
       <div className="grid gap-5  md:grid-cols-2  xl:grid-cols-4  ">
-        <div className="text-white w-[250px] flex bg-red-900 rounded-lg text-center">
-          <span className="m-[auto] p-[auto]">Filter Heros </span>
+        <div className="text-white w-[250px] flex bg-red-900 rounded-lg text-center hover:scale-110 hover:bg-lime-500 hover:text-black">
+          <button className="m-[auto] p-[auto] w-full " onClick={clickHandler}>
+            Clear Filter Button{" "}
+          </button>
         </div>
         <select
           id="selectOption1"
