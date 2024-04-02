@@ -6,22 +6,51 @@ import HeroCard from "../components/HeroCard";
 const HomePage = () => {
   //State for render
   const [fetchData, setFetchData] = useState([]);
+
   const [herosList, setHerosList] = useState([]);
   const [loading, setLoading] = useState(true);
   //State for filter
-  const [selectedOption1, setSelectedOption1] = useState("default");
-  const [selectedOption2, setSelectedOption2] = useState("default");
-  const [inputName, setInputName] = useState("");
+  const [selectedOption1, setSelectedOption1] = useState(() => {
+    const option1Storage = localStorage.getItem("option1");
+    if (option1Storage) {
+      return JSON.parse(option1Storage);
+    } else {
+      return "default";
+    }
+  });
+  const [selectedOption2, setSelectedOption2] = useState(() => {
+    const option2Storage = localStorage.getItem("option2");
+    if (option2Storage) {
+      return JSON.parse(option2Storage);
+    } else {
+      return "default";
+    }
+  });
+
+  const [inputName, setInputName] = useState(() => {
+    const inputStorage = localStorage.getItem("userInput");
+    if (inputStorage) {
+      return JSON.parse(inputStorage);
+    } else {
+      return "";
+    }
+  });
 
   //Render data first time that page load
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await fetchHeroList(); // Fetch heroes data
-
-        setHerosList(data); // Set the fetched data in state
+        const heroList = filterData(
+          selectedOption1,
+          selectedOption2,
+          inputName,
+          data
+        );
+        setHerosList(heroList);
         setFetchData(data); //Store back up fetch data
         setLoading(false); // Set loading state to false after data is fetched
+        console.log(`useEffect is run`);
       } catch (error) {
         console.error("Error fetching data:", error);
         setLoading(false); // Set loading state to false in case of error
@@ -43,8 +72,12 @@ const HomePage = () => {
     setSelectedOption2(event.target.value);
   };
   //Filter data
-  function filterData(option1, option2, input) {
+  function filterData(option1, option2, input, fetchData) {
     let filteredData = fetchData;
+
+    console.log(filteredData);
+    console.log(option1);
+    console.log(option2);
 
     // Filter based on selected option1
     if (option1 !== "default") {
@@ -69,13 +102,21 @@ const HomePage = () => {
   }
 
   useEffect(() => {
-    const newData = filterData(selectedOption1, selectedOption2, inputName);
+    localStorage.setItem(`option1`, JSON.stringify(selectedOption1));
+    localStorage.setItem(`option2`, JSON.stringify(selectedOption2));
+    localStorage.setItem(`userInput`, JSON.stringify(inputName));
+    const newData = filterData(
+      selectedOption1,
+      selectedOption2,
+      inputName,
+      fetchData
+    );
     setHerosList(newData);
   }, [selectedOption1, selectedOption2, inputName]);
 
   return (
     <div className="flex flex-col w-[100%] justify-center items-center ">
-      <h1 className="text-6xl text-red-500 m-[20px] text-center shining-text">
+      <h1 className="text-6xl text-red-500 m-[20px] text-center animate-charcter">
         List of Heroes
       </h1>
 
@@ -88,7 +129,7 @@ const HomePage = () => {
           value={selectedOption1}
           onChange={option1Handler}
         >
-          <option value="default">All stat</option>
+          <option value="default">All Attributes</option>
           <option value="0">Strength</option>
           <option value="1">Agility</option>
           <option value="2">Intelligent</option>
@@ -99,7 +140,7 @@ const HomePage = () => {
           value={selectedOption2}
           onChange={option2Handler}
         >
-          <option value="default">complexity </option>
+          <option value="default">All Complexities</option>
           <option value="1">Beginner</option>
           <option value="2">Intermediate</option>
           <option value="3">Advanced</option>

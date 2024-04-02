@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Rating } from "flowbite-react";
 
-function HeroRoleDisplay({ roles }) {
+function HeroRoleDisplay({ roles, index }) {
   const {
     Carry: carry,
     Support: support,
@@ -14,6 +14,16 @@ function HeroRoleDisplay({ roles }) {
     Pusher: pusher,
     Initiator: initator,
   } = roles;
+
+  const customTheme = {
+    base: "flex items-center",
+    label: "text-sm font-medium text-violet-400",
+    progress: {
+      base: "mx-4 h-5 w-2/4 rounded bg-white ",
+      fill: `h-5 rounded bg-yellow-300`,
+      label: "text-sm font-medium text-lime-300",
+    },
+  };
 
   function genPercent(num, name) {
     return { value: Math.ceil(num * 33.3), name: name };
@@ -38,6 +48,7 @@ function HeroRoleDisplay({ roles }) {
             percentFilled={arr.value}
             className="mb-2"
             key={index}
+            theme={customTheme}
           >
             <h1 className="text-white w-[75px] pl-2 capitalize">{arr.name}</h1>
           </Rating.Advanced>

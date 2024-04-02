@@ -47,7 +47,10 @@ const HeroDetailDisplay = ({ heroData }) => {
             {heroData.attack_range > 300 ? " Range" : " Melee"}
           </h1>
           <div className="pt-[10px] border-b bg-black opacity-85">
-            <HeroRoleDisplay roles={heroData.roles} />
+            <HeroRoleDisplay
+              roles={heroData.roles}
+              index={heroData.primary_attr}
+            />
           </div>
           <div className="flex w-[100%]">
             <SkillsTab abilities={heroData.abilities} heroData={heroData} />
